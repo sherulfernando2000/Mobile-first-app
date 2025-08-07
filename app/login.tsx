@@ -1,6 +1,7 @@
 import { View, Text, TextInput, Pressable } from 'react-native'
 import React, { useState } from 'react'
 import { useRouter } from 'expo-router';
+import { useAuth } from '@/context/AuthContext';
 
 const Login = () => {
    const [username, setUsername] = useState(''); 
@@ -13,6 +14,9 @@ const Login = () => {
         router.replace("/")
     }
    }
+
+
+   const { isUser, login, logout, } =  useAuth()
 
   return (
      <View className="flex-1 justify-center items-center bg-white px-6">
